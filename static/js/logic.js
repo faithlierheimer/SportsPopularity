@@ -1,8 +1,8 @@
 //try to read in nfl data
 
-d3.csv("nfl.csv").then(function(data) {
-    // Print the attendance data
-    console.log(data);
+d3.csv("nfl_cleaned.csv").then(function(nfldata) {
+    // Print the attendance nfldata
+    console.log(nfldata);
     //define map
     var myMap = L.map("map", {
         center: [
@@ -23,17 +23,32 @@ d3.csv("nfl.csv").then(function(data) {
     }).addTo(myMap);
     
     //pass each lat/long to a test marker with a team label
-    for(var i = 0; i<data.length; i++){
-        L.marker([data[i].lat, data[i].long])
-        .bindPopup(`<h3> ${data[i].team} </h3><hr> <h4> Attendance: ${data[i].total_attendance} </h4>`)
-        .addTo(myMap);
+    for(var i = 0; i<nfldata.length; i++){
+        var color = "";
+        if (nfldata[i].total_attendance > 800000 && nfldata[i].total_attendance < 900000) {
+            color = "#fee5d9";
+        }
+        else if (nfldata[i].total_attendance > 900000 && nfldata[i].total_attendance < 1000000) {
+            color = "#fcae91";
+        }
+        else if (nfldata[i].total_attendance > 1000000 && nfldata[i].total_attendance < 1100000) {
+            color = "#fb6a4a";
+        }
+        else if (nfldata[i].total_attendance > 1100000) {
+            color = "#cb181d";
+        }
+        else {
+            color = "red";
+        }
+
         //now put in a circle w/different size depending on attendance
-        L.circle([data[i].lat, data[i].long], {
+        L.circle([nfldata[i].lat, nfldata[i].long], {
             fillOpacity: 0.75,
             color: "white",
-            fillColor: "red",
-            radius: data[i].total_attendance*0.05
-        }).addTo(myMap);
+            fillColor: color,
+            radius: nfldata[i].total_attendance*0.06
+        }) .bindPopup(`<h3> ${nfldata[i].team} </h3><hr> <h4> Attendance: ${nfldata[i].total_attendance} </h4>`)
+           .addTo(myMap);
     };
 
     

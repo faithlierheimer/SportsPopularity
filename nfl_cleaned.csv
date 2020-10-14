@@ -1,32 +1,32 @@
 ,team,total_attendance,stadium_capacity,stadium,lat,long
 0,Arizona Cardinals,1018127,63400,University of Phoenix Stadium,33.5276247,-112.2625593
-1,Atlanta Falcons,1119143,71000,Mercedes Benz Stadium,33.7554491,-84.4008512
+1,Atlanta Falcons,1119143,71000,Mercedes Benz Stadium,33.7554491,-84.40085119999999
 2,Baltimore Ravens,1053383,71008,M&T Bank Stadium,39.2779876,-76.6227044
 3,Buffalo Bills,1072899,73967,New Era Field,42.7737546,-78.7869723
 4,Carolina Panthers,1102756,73778,Bank of America Stadium,35.2258108,-80.8528465
 5,Chicago Bears,1045568,61500,Soldier Field,41.8623132,-87.6166884
-6,Cincinnati Bengals,911289,65515,Paul Brown Stadium,39.0954576,-84.5160577
+6,Cincinnati Bengals,911289,65515,Paul Brown Stadium,39.0954576,-84.51605769999999
 7,Cleveland Browns,1045441,68000,FirstEnergy Stadium,41.5060535,-81.6995481
-8,Dallas Cowboys,1303393,80000,AT&T Stadium,32.7472844,-97.0944939
+8,Dallas Cowboys,1303393,80000,AT&T Stadium,32.7472844,-97.09449389999999
 9,Denver Broncos,1092324,76125,Empower Field,39.7438895,-105.0201094
 10,Detroit Lions,1054328,65000,Ford Field,42.3400064,-83.045603
-11,Green Bay Packers,1163842,80735,Lambeau Field,44.5013406,-88.0622083
-12,Houston Texans,1112480,71500,NRG Stadium,29.6847219,-95.4107074
-13,Indianapolis Colts,1006361,63000,Lucas Oil Stadium,39.7601007,-86.1638877
+11,Green Bay Packers,1163842,80735,Lambeau Field,44.5013406,-88.06220830000001
+12,Houston Texans,1112480,71500,NRG Stadium,29.6847219,-95.41070739999999
+13,Indianapolis Colts,1006361,63000,Lucas Oil Stadium,39.7601007,-86.16388769999999
 14,Jacksonville Jaguars,1109899,67264,TIAA Bank Field,30.3239536,-81.6372528
-15,Kansas City Chiefs,1107376,76416,Arrowhead Stadium,39.0489391,-94.4839157
+15,Kansas City Chiefs,1107376,76416,Arrowhead Stadium,39.04893910000001,-94.4839157
 16,Los Angeles Chargers,803556,30000,StubHub Center,33.8643777,-118.2611426
 17,Los Angeles Rams,1102409,77500,Los Angeles Coliseum,34.0140526,-118.2878754
 18,Miami Dolphins,1062180,65326,Hard Rock Stadium,25.9579665,-80.2388604
-19,Minnesota Vikings,1090834,66200,US Bank Stadium,44.9736461,-93.2574945
+19,Minnesota Vikings,1090834,66200,US Bank Stadium,44.9736461,-93.25749449999999
 20,New England Patriots,1068530,68756,Gillette Stadium,42.0909458,-71.2643465
 21,New Orleans Saints,1147700,76468,Superdome,29.951061,-90.0812442
 22,New York Giants,1183132,82500,MetLife Stadium,40.8135064,-74.074457
-23,New York Jets,1130823,53250,RingCentral Coliseum,37.7515946,-122.2005458
-24,Oakland Raiders,955258,69176,Lincoln Financial Field,39.900789,-75.1674341
-25,Philadelphia Eagles,1149737,65500,Heinz Field,40.4467648,-80.0157603
-26,Pittsburgh Steelers,1040509,68500,Levi’s Stadium,37.4033851,-121.9694287
-27,San Francisco 49ers,1052454,67000,CenturyLink Field,47.5951518,-122.3316394
+23,New York Jets,1130823,53250,MetLife Stadium,40.8135,-74.0745
+24,Oakland Raiders,955258,69176,RingCentral Coliseum,37.7516,-122.201
+25,Philadelphia Eagles,1149737,65500,Lincoln Financial Field,39.9008,-75.1674
+26,Pittsburgh Steelers,1040509,68500,Heinz Field,40.4468,-80.0158
+27,San Francisco 49ers,1052454,67000,Levis Stadium,37.4034,-121.9694
 28,Seattle Seahawks,1114327,65890,Raymond James Stadium,27.9758691,-82.5033344
-29,Tampa Bay Buccaneers,999843,69143,Nissan Stadium,36.166479,-86.7712898
+29,Tampa Bay Buccaneers,999843,69143,Nissan Stadium,36.166479,-86.77128979999999
 30,Tennessee Titans,1092094,79000,FedEx Field,38.9076433,-76.8645454
