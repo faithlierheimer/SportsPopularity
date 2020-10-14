@@ -1,6 +1,6 @@
 //try to read in nfl data
 
-d3.csv("nfl_cleaned.csv").then(function(nfldata) {
+d3.csv("nfl.csv").then(function(nfldata) {
     // Print the attendance nfldata
     console.log(nfldata);
     //define map
