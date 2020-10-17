@@ -30,7 +30,30 @@ Base.prepare(engine, reflect = True)
 
 ## Double check connection brought in right tables 
 Tables = Base.classes.keys()
-print(Tables)
 
-# nfl = Base.classes.nfl_attendance
+#Save nfl table ref to its own variable
+nfl = Base.classes.nfl
 
+#Create a session to manage transactions to sqlite db
+session = Session(engine)
+
+##Get nfl data in so it can be jsonified?
+nfl_att = session.query(nfl.team, nfl.total_attendance, nfl.lat, nfl.long)
+nfl_att_df = pd.DataFrame(nfl_att, columns=['team', 'attendance', 'lat', 'long'])
+nfl_dict = nfl_att_df.to_dict('records')
+# print(nfl_dict)
+
+app = Flask(__name__)
+@app.route("/")
+def home():
+    print("Server received request for homepage.")
+    return """Available routes: 
+            FILL IN AVAILABLE ROUTES LATER"""
+
+@app.route("/api/v1.0/nfl")
+def nfl_attendance():
+    print("Server received request for NFL map page")
+    nfl_json = jsonify(nfl_dict)
+    return nfl_json
+if __name__ == "__main__":
+    app.run(debug=True)
