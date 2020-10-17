@@ -28,19 +28,19 @@ d3.csv("../../mlb_attendance.csv").then(function(mlbdata) {
     for(var i = 0; i<mlbdata.length; i++){
         var color = "";
         if (mlbdata[i].Home_attendance > 800000 && mlbdata[i].Home_attendance < 1000000) {
-            color = "#fee5d9";
+            color = "white";
         }
-        else if (mlbdata[i].Home_attendance > 1000000 && mlbdata[i].Home_attendance < 3000000) {
-            color = "#fcae91";
+        else if (mlbdata[i].Home_attendance > 1000000 && mlbdata[i].Home_attendance < 2000000) {
+            color = "blue";
         }
-        else if (mlbdata[i].Home_attendance > 3000000 && mlbdata[i].Home_attendance < 4100000) {
-            color = "#fb6a4a";
+        else if (mlbdata[i].Home_attendance > 2000000 && mlbdata[i].Home_attendance < 3000000) {
+            color = "red";
         }
-        else if (mlbdata[i].Home_attendance > 4100000) {
-            color = "#cb181d";
+        else if (mlbdata[i].Home_attendance > 3000000) {
+            color = "green";
         }
         else {
-            color = "red";
+            color = "black";
         }
 
         //now put in a circle w/different size depending on attendance
