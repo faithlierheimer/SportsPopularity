@@ -27,16 +27,16 @@ d3.csv("../../mlb_attendance.csv").then(function(mlbdata) {
     //pass each lat/long to a test marker with a team label
     for(var i = 0; i<mlbdata.length; i++){
         var color = "";
-        if (mlbdata[i].Home_attendance > 800000 && mlbdata[i].Home_attendance < 900000) {
+        if (mlbdata[i].Home_attendance > 800000 && mlbdata[i].Home_attendance < 1000000) {
             color = "#fee5d9";
         }
-        else if (mlbdata[i].Home_attendance > 900000 && mlbdata[i].Home_attendance < 1000000) {
+        else if (mlbdata[i].Home_attendance > 1000000 && mlbdata[i].Home_attendance < 3000000) {
             color = "#fcae91";
         }
-        else if (mlbdata[i].Home_attendance > 1000000 && mlbdata[i].Home_attendance < 1100000) {
+        else if (mlbdata[i].Home_attendance > 3000000 && mlbdata[i].Home_attendance < 4100000) {
             color = "#fb6a4a";
         }
-        else if (mlbdata[i].Home_attendance > 1100000) {
+        else if (mlbdata[i].Home_attendance > 4100000) {
             color = "#cb181d";
         }
         else {
@@ -49,7 +49,7 @@ d3.csv("../../mlb_attendance.csv").then(function(mlbdata) {
             color: "white",
             fillColor: color,
             radius: mlbdata[i].Home_attendance*0.06
-        }) .bindPopup(`<h3> ${mlbdata[i].Team_Name} </h3><hr> <h4> Attendance: ${mlbdata[i].Home_attendance} </h4>`)
+        }) .bindPopup(`<h3> ${mlbdata[i].Team_Names} </h3><hr> <h4> Attendance: ${mlbdata[i].Home_attendance} </h4>`)
            .addTo(myMap);
     };
 
