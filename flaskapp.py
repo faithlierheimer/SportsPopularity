@@ -1,5 +1,6 @@
 #Import flask
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 
 #Import dependencies for queries to include in endpoints
 ############################
@@ -33,6 +34,7 @@ Tables = Base.classes.keys()
 
 #Save nfl table ref to its own variable
 nfl = Base.classes.nfl
+mlb3 = Base.classes.mlb3
 
 #Create a session to manage transactions to sqlite db
 session = Session(engine)
@@ -41,9 +43,15 @@ session = Session(engine)
 nfl_att = session.query(nfl.team, nfl.total_attendance, nfl.lat, nfl.long)
 nfl_att_df = pd.DataFrame(nfl_att, columns=['team', 'attendance', 'lat', 'long'])
 nfl_dict = nfl_att_df.to_dict('records')
+
+##Get mlb data 
+mlb_att = session.query(mlb3.Team_Names, mlb3.Home_attendance, mlb3.Per_Game, mlb3.Lat, mlb3.Long)
+mlb_att_df = pd.DataFrame(mlb_att, columns = ['team', 'attendance', 'per_game', 'lat', 'long'])
+mlb_dict = mlb_att_df.to_dict('records')
 # print(nfl_dict)
 
 app = Flask(__name__)
+CORS(app)
 @app.route("/")
 def home():
     print("Server received request for homepage.")
@@ -55,5 +63,10 @@ def nfl_attendance():
     print("Server received request for NFL map page")
     nfl_json = jsonify(nfl_dict)
     return nfl_json
+@app.route("/api/v1.0/mlb")
+def mlb_attendance():
+    print("Its baseball")
+    mlb_json = jsonify(mlb_dict)
+    return mlb_json
 if __name__ == "__main__":
     app.run(debug=True)
