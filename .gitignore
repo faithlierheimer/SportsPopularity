@@ -2,3 +2,4 @@ config.js
 config.py
 __pycache__/
 
+static/js/config.js

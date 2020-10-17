@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 import json
 from flask import Flask, jsonify
+from flask_cors import CORS,cross_origin
 
 engine = create_engine("sqlite:///Resources/nba_data.sqlite")
 connection = engine.connect()
@@ -13,6 +14,7 @@ Base.prepare(engine, reflect=True)
 nba_data=Base.classes.nba_table
 
 app=Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def welcome():
