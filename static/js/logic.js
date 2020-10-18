@@ -14,8 +14,22 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
 
     //INITIALIZE NHL LAYER HERE
     nhl_data = []
+
     //INITIALIZE NBA LAYER HERE
     nba_data = []
+
+    //nfl prices
+    nfl_price = []
+
+    //nba price
+    nba_price = []
+
+    //nhl price
+    nhl_price = []
+
+    //mlb price
+    mlb_price = []
+
     //Make color scale for NFL attendance
     for(var i = 0; i<sportsdata.nfl.length; i++){
         var color = "";
@@ -59,6 +73,9 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
 
     //INSERT COLOR SCALE FOR NBA LAYER HERE-BUT NAME THE COLOR NBA_COLOR or something INSTEAD OF COLOR. 
 
+    //IF WE HAVE A COLOR SCALE FOR PRICE DATA PUT IT HERE, BUT NAME COLORS SOMETHING DIFFERENT. 
+
+
         //now put in a circle w/different size depending on attendance
         nfl_data.push(L.circle([sportsdata.nfl[i].lat, sportsdata.nfl[i].long], {
             fillOpacity: 0.75,
@@ -88,6 +105,24 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
             //circles data on the inside of this. 
 
         );
+
+        //INSERT CIRCLES ABOUT NFL PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
+        nfl_price.push(
+            //circles data on the inside of this.
+
+        );
+
+        //INSERT CIRCLES ABOUT MLB PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
+        mlb_price.push(
+            //circles data on the inside of this. 
+
+        );
+
+        //INSERT CIRCLES ABOUT NBA PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
+        nba_price.push(
+            //circles data on the inside of this. 
+
+        );
     };
 
     //make nfl data layer 
@@ -101,6 +136,19 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
 
     //make nba data layer 
     var nba = L.layerGroup(nba_data);
+
+    //make nfl price layer 
+    var nfl_prices = L.layerGroup(nfl_price);
+
+    //make nba data layer 
+    var mlb_prices = L.layerGroup(mlb_price);
+
+    //make nba data layer 
+    var nhl_prices = L.layerGroup(nhl_price);
+
+    //make nba data layer 
+    var nba_prices = L.layerGroup(nba_price);
+
 
     //streetmap and darkmap layer 
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -130,7 +178,11 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
         NFL: nfl,
         MLB: mlb,
         NHL: nhl,
-        NBA: nba
+        NBA: nba,
+        "NFL Prices": nfl_prices,
+        "MLB Prices": mlb_prices,
+        "NHL Prices": nhl_prices,
+        "NBA Prices": nba_prices
     };
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
