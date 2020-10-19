@@ -1,3 +1,4 @@
+import pandas as pd
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -6,7 +7,7 @@ import json
 from flask import Flask, jsonify
 from flask_cors import CORS,cross_origin
 
-engine = create_engine("sqlite:///Resources/nba_data.sqlite")
+engine = create_engine("sqlite:///sports.db")
 connection = engine.connect()
 
 Base=automap_base()
@@ -29,18 +30,11 @@ def nba_fetch():
     session=Session(engine)
     nba_info=session.query(nba_data.Arena, nba_data.Capacity, nba_data.Lat, nba_data.Lng, nba_data.team, nba_data.total_attendance).all()
     session.close()
+
+    nba_table=pd.DataFrame(nba_info,columns=['Arena','Capacity','Lat','Lng','Team','Total_attendance'])
+    nba_dict=nba_table.to_dict('records')
     
-    nba_results=[]
-    for a,c,la,ln,te,to in nba_info:
-        nba_dict={}
-        nba_dict["Arena"]=a
-        nba_dict["Team"]=te
-        nba_dict["Total_attendance"]=to
-        nba_dict["Capacity"]=c
-        nba_dict["Lat"]=la
-        nba_dict["Lng"]=ln
-        nba_results.append(nba_dict)
-    return jsonify(nba_results)
+    return jsonify(nba_dict)
 
 
 if __name__ == '__main__':

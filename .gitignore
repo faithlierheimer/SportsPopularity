@@ -1,5 +1,7 @@
 config.js
 config.py
+api_keys
 __pycache__/
 
 static/js/config.js
+api_keys.py
