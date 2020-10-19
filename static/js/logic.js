@@ -4,7 +4,7 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
     // Check the data 
     //TO ACCESS MLB DATA AT HIGHEST LEVEL: sportsdata.mlb, then iterate from there
     //OTHER DATA SHOULD FOLLOW SUIT: sportsdata.nfl, sportsdata.nhl, etc. 
-    console.log(sportsdata.mlb[1]);
+    console.log(sportsdata.mlb[1].lat);
     
     //initialize NFL layer 
     nfl_data = []
@@ -48,6 +48,13 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
         else {
             color = "red";
         }
+        //now put in a circle w/different size depending on attendance
+        nfl_data.push(L.circle([sportsdata.nfl[i].lat, sportsdata.nfl[i].long], {
+            fillOpacity: 0.75,
+            color: "white",
+            fillColor: color,
+            radius: sportsdata.nfl[i].attendance*0.06
+        }) .bindPopup(`<h3> ${sportsdata.nfl[i].team} </h3><hr> <h4> Attendance: ${sportsdata.nfl[i].attendance} </h4>`));
     };
     
     //make color scale for MLB attendance 
@@ -67,23 +74,7 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
         }
         else {
             mlb_color = "black";
-        };
-
-    //INSERT COLOR SCALE FOR NHL LAYER HERE--BUT NAME THE COLOR NHL_COLOR or something INSTEAD OF COLOR. 
-
-    //INSERT COLOR SCALE FOR NBA LAYER HERE-BUT NAME THE COLOR NBA_COLOR or something INSTEAD OF COLOR. 
-
-    //IF WE HAVE A COLOR SCALE FOR PRICE DATA PUT IT HERE, BUT NAME COLORS SOMETHING DIFFERENT. 
-
-
-        //now put in a circle w/different size depending on attendance
-        nfl_data.push(L.circle([sportsdata.nfl[i].lat, sportsdata.nfl[i].long], {
-            fillOpacity: 0.75,
-            color: "white",
-            fillColor: color,
-            radius: sportsdata.nfl[i].attendance*0.06
-        }) .bindPopup(`<h3> ${sportsdata.nfl[i].team} </h3><hr> <h4> Attendance: ${sportsdata.nfl[i].attendance} </h4>`));
-
+        }
         //circles about attendance for MLB data
         mlb_data.push(L.circle([sportsdata.mlb[i].lat, sportsdata.mlb[i].long], {
             fillOpacity: 0.75,
@@ -92,38 +83,40 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
             radius: sportsdata.mlb[i].attendance*0.06
         }) 
         .bindPopup(`<h3> ${sportsdata.mlb[i].team} </h3><hr> <h4> Attendance: ${sportsdata.mlb[i].attendance} </h4>`));
-        
-        //INSERT CIRCLES ABOUT ATTENDANCE FOR NHL DATA--TAKE OUT .ADDTO(MYMAP) PIECE. 
-        nhl_data.push(
-        //circles data on the inside of this. 
+    };
 
-
-        );
-
-        //INSERT CIRCLES ABOUT ATTENDANCE FOR NBA DATA--TAKE OUT .ADDTO(MYMAP) PIECE. 
+//for loop for nba data, includes color scale and markers. 
+    for(var i = 0; i<sportsdata.nba.length; i++){
+        var nba_color = "";
+        if (sportsdata.nba[i].Total_attendance > 800000 && sportsdata.nba[i].Total_attendance < 900000) {
+            nba_color = "#fee5d9";
+        }
+        else if (sportsdata.nba[i].Total_attendance > 900000 && sportsdata.nba[i].Total_attendance < 1000000) {
+            nba_color = "#fcae91";
+        }
+        else if (sportsdata.nba[i].Total_attendance > 1000000 && sportsdata.nba[i].Total_attendance < 1100000) {
+            nba_color = "#fb6a4a";
+        }
+        else if (sportsdata.nba[i].Total_attendance > 1100000) {
+            nba_color = "#cb181d";
+        }
+        else {
+            nba_color = "red";
+        }
         nba_data.push(
-            //circles data on the inside of this. 
-
-        );
-
-        //INSERT CIRCLES ABOUT NFL PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
-        nfl_price.push(
-            //circles data on the inside of this.
-
-        );
-
-        //INSERT CIRCLES ABOUT MLB PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
-        mlb_price.push(
-            //circles data on the inside of this. 
-
-        );
-
-        //INSERT CIRCLES ABOUT NBA PRICE DATA--TAKE OUT .ADDTO(MYMAP) PIECE
-        nba_price.push(
-            //circles data on the inside of this. 
-
+            L.circle([sportsdata.nba[i].Lat, sportsdata.nba[i].Lng], {
+                fillOpacity: 0.75,
+                color: "white",
+                fillColor: nba_color,
+                radius: sportsdata.nba[i].Total_attendance*0.06
+            })
+            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.mlb[i].attendance} </h4>`)
         );
     };
+
+    //for loop for nhl data: 
+
+        
 
     //make nfl data layer 
     var nfl = L.layerGroup(nfl_data);
@@ -177,12 +170,12 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
     var overlayMaps = {
         NFL: nfl,
         MLB: mlb,
-        NHL: nhl,
+        // NHL: nhl,
         NBA: nba,
-        "NFL Prices": nfl_prices,
-        "MLB Prices": mlb_prices,
-        "NHL Prices": nhl_prices,
-        "NBA Prices": nba_prices
+        // "NFL Prices": nfl_prices,
+        // "MLB Prices": mlb_prices,
+        // "NHL Prices": nhl_prices,
+        // "NBA Prices": nba_prices
     };
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
