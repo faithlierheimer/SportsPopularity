@@ -24,27 +24,34 @@ from sqlalchemy import create_engine, func
 ###THIS WILL ONLY WORK IF SUBSEQUENT DATA HAS GONE THRU THE "ADD A PRIMARY KEY" PROCESS THAT KEVIN WALKED US THROUGH.
 engine = create_engine('sqlite:///sports.db')
 engine2 = create_engine('sqlite:///sports_nfl.db')
-
+engine3 = create_engine('sqlite:///sports_tickets.db')
 ## Declare a base
 Base = automap_base()
 Base2 = automap_base()
+Base3 = automap_base()
 ## Use a base class to reflect NFL db tables
 Base.prepare(engine, reflect = True)
 Base2.prepare(engine2, reflect = True)
+Base3.prepare(engine3, reflect = True)
 ## Double check connection brought in right tables 
 Tables = Base.classes.keys()
 Tables2 = Base2.classes.keys()
-print(Tables2)
+Tables3 = Base3.classes.keys()
+# print(Tables3)
 #Save nfl table ref to its own variable
 ####USE THIS FORMAT TO SAVE TABLE REFS TO OWN VARIABLES FOR NHL, NBA, AND TICKET DATA. 
 nfl = Base2.classes.nfl
 mlb3 = Base.classes.mlb3
 nba_data=Base.classes.nba_table
+Nfl_prices = Base3.classes.nfl_prices
+Nba_prices = Base3.classes.nba_prices
+Mlb_prices = Base3.classes.mlb_prices
+Nhl_prices = Base3.classes.nhl_prices
 
 #Create a session to manage transactions to sqlite db
 session = Session(engine)
 session2 = Session(engine2)
-
+session3 = Session(engine3)
 ##Get nfl data in so it can be jsonified
 nfl_att = session2.query(nfl.team, nfl.total_attendance, nfl.lat, nfl.long)
 ##these column names below are custom---i made them slightly different than what is in the
@@ -67,6 +74,21 @@ nba_dict=nba_table.to_dict('records')
 
 ##TICKET DATA TO DICTIONARY USING RECORDS METHOD TO EVENTUALLY BE JSONIFIED##
 
+#nfl ticket data
+nfl_tickets = session3.query(Nfl_prices.team, Nfl_prices.price, Nfl_prices.lat, Nfl_prices.long)
+nfl_tickets_df = pd.DataFrame(nfl_tickets, columns=['team', 'tic_price', 'lat', 'long'])
+nfl_tickets_dict = nfl_tickets_df.to_dict('records')
+
+#Mlb ticket data
+mlb_tickets = session3.query(Mlb_prices.team, Mlb_prices.price, Mlb_prices.lat, Mlb_prices.long)
+mlb_tickets_df = pd.DataFrame(mlb_tickets, columns=['team', 'tic_price', 'lat', 'long'])
+mlb_tickets_dict = mlb_tickets_df.to_dict('records')
+
+#nba ticket data 
+nba_tickets = session3.query(Nba_prices.team, Nba_prices.price, Nba_prices.lat, Nba_prices.long)
+nba_tickets_df = pd.DataFrame(nba_tickets, columns=['team', 'tic_price', 'lat', 'long'])
+nba_tickets_dict = nba_tickets_df.to_dict('records')
+
 app = Flask(__name__)
 CORS(app)
 @app.route("/")
@@ -87,7 +109,10 @@ def nfl_mlb_attendance():
     sport = {
         "nfl": nfl_dict,
         "mlb": mlb_dict,
-        "nba": nba_dict
+        "nba": nba_dict,
+        "nfl_tickets": nfl_tickets_dict,
+        "nba_tickets": nba_tickets_dict,
+        "mlb_tickets": mlb_tickets_dict
     }
     sports = jsonify(sport)
     return sports
