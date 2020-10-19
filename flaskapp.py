@@ -23,26 +23,30 @@ from sqlalchemy import create_engine, func
 ## Create engine
 ###THIS WILL ONLY WORK IF SUBSEQUENT DATA HAS GONE THRU THE "ADD A PRIMARY KEY" PROCESS THAT KEVIN WALKED US THROUGH.
 engine = create_engine('sqlite:///sports.db')
+engine2 = create_engine('sqlite:///sports_nfl.db')
 
 ## Declare a base
 Base = automap_base()
-
+Base2 = automap_base()
 ## Use a base class to reflect NFL db tables
 Base.prepare(engine, reflect = True)
-
+Base2.prepare(engine2, reflect = True)
 ## Double check connection brought in right tables 
 Tables = Base.classes.keys()
-
+Tables2 = Base2.classes.keys()
+print(Tables2)
 #Save nfl table ref to its own variable
 ####USE THIS FORMAT TO SAVE TABLE REFS TO OWN VARIABLES FOR NHL, NBA, AND TICKET DATA. 
-nfl = Base.classes.nfl
+nfl = Base2.classes.nfl
 mlb3 = Base.classes.mlb3
+nba_data=Base.classes.nba_table
 
 #Create a session to manage transactions to sqlite db
 session = Session(engine)
+session2 = Session(engine2)
 
 ##Get nfl data in so it can be jsonified
-nfl_att = session.query(nfl.team, nfl.total_attendance, nfl.lat, nfl.long)
+nfl_att = session2.query(nfl.team, nfl.total_attendance, nfl.lat, nfl.long)
 ##these column names below are custom---i made them slightly different than what is in the
 ## actual df in jupyter notebook for ease of referencing in the logic.js. 
 nfl_att_df = pd.DataFrame(nfl_att, columns=['team', 'attendance', 'lat', 'long'])
@@ -55,6 +59,9 @@ mlb_att_df = pd.DataFrame(mlb_att, columns = ['team', 'attendance', 'per_game', 
 mlb_dict = mlb_att_df.to_dict('records')
 
 ##NBA DATA TO DICTIONARY USING RECORDS METHOD TO EVENTUALLY BE JSONIFIED## 
+nba_info=session.query(nba_data.Arena, nba_data.Capacity, nba_data.Lat, nba_data.Lng, nba_data.team, nba_data.total_attendance).all()
+nba_table=pd.DataFrame(nba_info,columns=['Arena','Capacity','Lat','Lng','Team','Total_attendance'])
+nba_dict=nba_table.to_dict('records')
 
 ##NHL DATA TO DICTIONARY USING RECORDS METHOD TO EVENTUALLY BE JSONIFIED## 
 
@@ -79,7 +86,8 @@ def nfl_mlb_attendance():
     ## in class the other day. 
     sport = {
         "nfl": nfl_dict,
-        "mlb": mlb_dict
+        "mlb": mlb_dict,
+        "nba": nba_dict
     }
     sports = jsonify(sport)
     return sports
