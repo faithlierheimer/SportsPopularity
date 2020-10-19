@@ -1,0 +1,31 @@
+id_num,team,price,stadium,lat,long
+01,76ers,$81.00 ,Wells Fargo Center,39.9012,-75.172
+02,Blazers,$92.00 ,Moda Center,45.5316,-122.667
+03,Bucks,$60.00 ,Fiserv Forum,43.0451,-87.9174
+04,Bulls,$165.00 ,United Center,41.8807,-87.6742
+05,Cavaliers,$42.00 ,Rocket Mortgage FieldHouse,41.4966,-81.6881
+06,Celtics,$85.00 ,TD Garden,42.3662,-71.0621
+07,Clippers,$130.00 ,Staples Center,34.043,-118.267
+08,Grizzlies,$55.00 ,FedExForum,35.1381,-90.0506
+09,Hawks,$111.00 ,State Farm Arena,33.7573,-84.3963
+10,Heat,$155.00 ,American Airlines Arena,25.7814,-80.187
+11,Hornets,$89.00 ,Spectrum Center,35.2252,-80.8394
+12,Jazz,$76.00 ,Vivint Smart Home Arena,40.7683,-111.901
+13,Kings,$75.00 ,Golden 1 Center,38.5802,-121.5
+14,Knicks,$200.00 ,Madison Square Garden,40.7505,-73.9934
+15,Lakers,$180.00 ,Staples Center,34.043,-118.267
+16,Magic,$95.00 ,Amway Center,28.5392,-81.3839
+17,Mavericks,$52.00 ,American Airlines Center,32.7903,-96.8101
+18,Nets,$127.00 ,Barclays Center,40.6826,-73.9754
+19,Nuggets,$60.00 ,Pepsi Center,39.7487,-105.007
+20,Pacers,$55.00 ,Bankers Life Fieldhouse,39.764,-86.1555
+21,Pelicans,$60.00 ,Smoothie King Center,29.949,-90.0821
+22,Pistons,$74.00 ,Little Caesars Arena,42.3411,-83.0553
+23,Raptors,$110.00 ,Scotiabank Arena,43.6435,-79.3791
+24,Rockets,$120.00 ,Toyota Center,29.7508,-95.3621
+25,Spurs,$59.00 ,AT&T Center,29.4272,-98.4375
+26,Suns,$95.00 ,Talking Stick Resort Arena,33.4457,-112.071
+27,Thunder,$170.00 ,Chesapeake Energy Arena,35.4634,-97.5151
+28,Timberwolves,$65.00 ,Target Center,44.9795,-93.2761
+29,Warriors,$95.00 ,Chase Center,37.7704,-122.387
+30,Wizards,$64.00 ,Capital One Arena,38.8981,-77.0208

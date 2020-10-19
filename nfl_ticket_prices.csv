@@ -1,0 +1,33 @@
+id_num,team,price,stadium,lat,long
+01,Arizona Cardinals,$120.00 ,University of Phoenix Stadium,33.5276,-112.263
+02,Atlanta Falcons,$162.00 ,Mercedes Benz Stadium,33.7554,-84.4009
+03,Baltimore Ravens,$167.00 ,M&T Bank Stadium,39.278,-76.6227
+04,Buffalo Bills,$126.00 ,New Era Field,42.7738,-78.787
+05,Carolina Panthers,$139.00 ,Bank of America Stadium,35.2258,-80.8528
+06,Chicago Bears,$358.00 ,Soldier Field,41.8623,-87.6167
+07,Cincinnati Bengals,$99.00 ,Paul Brown Stadium,39.0955,-84.5161
+08,Cleveland Browns,$213.00 ,FirstEnergy Stadium,41.5061,-81.6995
+09,Dallas Cowboys,$331.00 ,AT&T Stadium,32.7473,-97.0945
+10,Denver Broncos,$247.00 ,Empower Field,39.7439,-105.02
+11,Detroit Lions,$145.00 ,Ford Field,42.34,-83.0456
+12,Green Bay Packers,$267.00 ,Lambeau Field,44.5013,-88.0622
+13,Houston Texans,$186.00 ,NRG Stadium,29.6847,-95.4107
+14,Indianapolis Colts,$112.00 ,Lucas Oil Stadium,39.7601,-86.1639
+15,Jacksonville Jaguars,$104.00 ,TIAA Bank Field,30.324,-81.6373
+16,Kansas City Chiefs,$221.00 ,Arrowhead Stadium,39.0489,-94.4839
+17,Los Angeles Chargers,$250.00 ,StubHub Center,33.8644,-118.261
+18,Los Angeles Rams,$136.00 ,Los Angeles Coliseum,34.0141,-118.288
+19,Miami Dolphins,$132.00 ,Hard Rock Stadium,25.958,-80.2389
+20,Minnesota Vikings,$211.00 ,US Bank Stadium,44.9736,-93.2575
+21,New England Patriots,$490.00 ,Gillette Stadium,42.0909,-71.2643
+22,New Orleans Saints,$256.00 ,Superdome,29.9511,-90.0812
+23,New York Giants,$198.00 ,MetLife Stadium,40.8135,-74.0745
+24,New York Jets,$169.00 ,MetLife Stadium,40.8135,-74.0745
+25,Oakland Raiders,$182.00 ,RingCentral Coliseum,37.7516,-122.201
+26,Philadelphia Eagles,$304.00 ,Lincoln Financial Field,39.9008,-75.1674
+27,Pittsburgh Steelers,$210.00 ,Heinz Field,40.4468,-80.0158
+28,San Francisco 49ers,$210.00 ,Levis Stadium,37.4034,-121.969
+29,Seattle Seahawks,$284.00 ,CenturyLink Field,47.5952,-122.332
+30,Tampa Bay Buccaneers,$154.00 ,Raymond James Stadium,27.9759,-82.5033
+31,Tennessee Titans,$161.00 ,Nissan Stadium,36.1665,-86.77
+32,Washington Redskins,$160.00 ,FedExField,38.907778,76.864444

@@ -1,0 +1,33 @@
+id_num,team,price,stadium,lat,long
+00,Anaheim Ducks,$60.00 ,Honda Center,33.8078,-117.876
+01,Arizona Coyotes,$62.00 ,Gila River Arena,33.5321,-112.261
+02,Boston Bruins,$170.00 ,TD Garden,42.3662,-71.0621
+03,Buffalo Sabres,$88.00 ,KeyBank Center,42.8754,-78.8764
+04,Calgary Flames,$80.00 ,Scotiabank Saddledome,51.0374,-114.052
+05,Carolina Hurricanes,$69.00 ,PNC Arena,35.8033,-78.7218
+06,Chicago Blackhawks,$283.00 ,United Center,41.8807,-87.6742
+07,Colorado Avalanche,$96.00 ,Pepsi Center,39.7487,-105.007
+08,Columbus Blue Jackets,$92.00 ,Nationwide Arena,39.9692,-83.006
+09,Dallas Stars,$97.00 ,American Airlines Center,32.7903,-96.8101
+10,Detroit Red Wings,$89.00 ,Little Caesars Arena,42.3411,-83.0553
+11,Edmonton Oilers,$105.00 ,Rogers Place,35.917,-84.0752
+12,Florida Panthers,$71.00 ,BB&T Center,26.1585,-80.3255
+13,Los Angeles Kings,$128.00 ,Staples Center,34.043,-118.267
+14,Minnesota Wild,$139.00 ,Xcel Energy Center,44.9448,-93.1011
+15,Montreal Canadiens,$171.00 ,Bell Centre,45.4961,-73.5693
+16,Nashville Predators,$119.00 ,Bridgestone Arena,36.1592,-86.7785
+17,New Jersey Devils,$77.00 ,Prudential Center,40.7335,-74.1711
+18,New York Islanders,$74.00 ,Nassau Coliseum,40.7233,-73.5907
+19,New York Rangers,$235.00 ,Madison Square Garden,40.7505,-73.9934
+20,Ottawa Senators,$71.00 ,Canadian Tire Centre,45.2969,-75.9268
+21,Philadelphia Flyers,$80.00 ,Wells Fargo Center,39.9012,-75.172
+22,Pittsburgh Penguins,$116.00 ,PPG Paints Arena,40.4396,-79.9895
+23,San Jose Sharks,$96.00 ,SAP Center,37.3328,-121.901
+24,Seattle Kraken,$71.00 ,Climate Pledge Arena,47.6221,-122.354
+25,St. Louis Blues,$80.00 ,Enterprise Center,39.0286,-94.6345
+26,Tampa Bay Lightning,$155.00 ,Amalie Arena,27.9427,-82.4518
+27,Toronto Maple Leafs,$85.00 ,Scotiabank Arena,43.6435,-79.3791
+28,Vancouver Canucks,$107.00 ,Rogers Arena,49.2778,-123.109
+29,Vegas Golden Knights,$136.00 ,T-Mobile Arena,36.1029,-115.178
+30,Washington Capitals,$118.00 ,Capital One Arena,38.8981,-77.0208
+31,Winnipeg Jets,$96.00 ,Bell MTS Place,49.8927,-97.1438
