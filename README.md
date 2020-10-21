@@ -11,7 +11,7 @@ Major league sports are an integral part of many American lives. However, not al
 # **Data Sources**
 
 Sports season-wide attendance data is relatively easily to find across the internet. To access this data, we will be using a series of web-scraping techniques, including but not limted to python's Pandas library and Beautiful Soup. 
-For our baseball attendance data, we will be scraping the Wikipedia article [2019 Major League Baseball Season](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) to access data on the Major League Baseball Teams' attendance figured for the 2019 season, as well as a [JSON of Ballparks' Locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
+For our baseball attendance data, we will be scraping the Wikipedia article [2019 Major League Baseball Season](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) to access data on the Major League Baseball Teams' [attendance figures](mlb_attendance.png) for the 2019 season, as well as a [JSON of Ballparks' Locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
 For the hockey attendance data we will be referencing 
 For the football attendance we
 For the basketball attendance data we 
@@ -21,6 +21,11 @@ For the ticket price data we
 ## Football Attendance
 ## Basketball Attendance
 ## Ticket Prices
+## Data Visualization
+Once we extracted the data from our chosen sources, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API
+ETL - take scraped data
+Flask - make API to store data we grabbed
+leaflet.js - requests data from flask and visualizes
 
 
 <!-- Our primary dataset is the [B Corps Impact Data](https://data.world/blab/b-corp-impact-data/workspace/file?filename=B+Corp+Impact+Data.csv) available on Data.world. We used this dataset as a touchpoint and performed extended analysis using SEC filing data from [the last 10k API](https://dev.last10k.com/) as well as the [Yahoo Finance API](https://rapidapi.com/apidojo/api/yahoo-finance1?utm_source=google&utm_medium=cpc&utm_campaign=Alpha_102958294991&utm_term=yahoo%20finance%20api_e&gclid=Cj0KCQjwpZT5BRCdARIsAGEX0zlmHEzQ_judMHR3zkOQ10xpyYfHnxClxfrQJ6nX2cFcGNRWXliUBX0aAplXEALw_wcB) to analyze profit data. 
