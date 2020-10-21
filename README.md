@@ -6,23 +6,25 @@ This is a collaborative project, shared between [Jennie Brozena](https://github.
 
 # **Summary of Interests and Intent**
 
-Major league sports are an integral part of many American lives. However, not all sports are equally popular in all cities. For example, the Green Bay Packers are a wildly successful football team in Wisconsin, but Wisconsin has no NHL team and no corresponding popularity of major league hockey. We are interested in analyzing the relative popularity of each of the “Big 4” sports, (hockey, baseball, football, and basketball) in major American cities and unearthing patterns in where some sports are more or less popular than others. On this large scale, we will use seasonwide attendance to games as a metric to score relative popularity; and we will also compare average ticket prices for teams' games across the four sports. We will be analysing the data from the 2019 professional sports' seasons. It's important to note that some sports have seaons that span across two calendar years, such as the basketball and football seasons; our data sources for those two sports will range from 2019-2020 caleldar years, but will be the data for the season starting in 2019.
+Major league sports are an integral part of many American lives. However, not all sports are equally popular in all cities. For example, the Green Bay Packers are a wildly successful football team in Wisconsin, but Wisconsin has no NHL team and no corresponding popularity of major league hockey. We are interested in analyzing the relative popularity of each of the “Big 4” sports, (hockey, baseball, football, and basketball) in major American cities and unearthing patterns in where some sports are more or less popular than others. On this large scale, we will use seasonwide attendance to games as a metric to score relative popularity; and we will also compare average ticket prices for teams' games across the four sports. Due to the implications of the Coronavirus pandemic, our professional sport teams' season data will be accesd from the 2018 and 2019 seasons. It's important to note that some sports have seaons that span across two calendar years, such as the hockey, basketball and football seasons.
 
 # **Data Sources**
 
 Sports season-wide attendance data is relatively easily to find across the internet. To access this data, we will be using a series of web-scraping techniques, including but not limted to python's Pandas library and Beautiful Soup. 
-For our baseball attendance data, we will be scraping the Wikipedia article [2019 Major League Baseball Season](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) to access data on the Major League Baseball Teams' [attendance figures](mlb_attendance.PNG) for the 2019 season, as well as a [JSON of Ballparks' Locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
-For the hockey attendance data we will be referencing 
-For the football attendance we
-For the basketball attendance data we 
-For the ticket price data we 
+For our baseball attendance data, we will be scraping the [Wikipedia article](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) 2019 Major League Baseball Season to access data on the Major League Baseball Teams' [attendance figures](mlb_attendance.PNG) for the 2019 season, as well as a [JSON of ballparks' locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
+For the hockey attendance data we will be referencing ESPN's aggregate of the [2018-2019 hockey season](http://www.espn.com/nhl/attendance/_/year/2019), and the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Hockey_League_arenas) of all professional hockey arenas.
+For the football attendance data we scraped Pro-Football-Reference's [data](https://www.pro-football-reference.com/years/2018/attendance.htm) on the 2018-2019 football season, and a [list](https://www.stadiumsofprofootball.com/comparisons/) of every professional football stadium.
+For the basketball attendance data we accessed [ESNP's data](http://www.espn.com/nba/attendance/_/year/2019) for the 2018-2019 season, as well as the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas) of the professional basketball arenas.
+For the ticket price data we utilzed the data from several sources and aggregated them into a single csv. The [MLB](https://www.tickpick.com/blog/how-much-are-mlb-tickets/) and [NFL](https://www.tickpick.com/blog/how-much-are-nfl-tickets/) ticket price data came from TickPick Blog. The [NBA's](https://finance.yahoo.com/news/average-ticket-prices-nba-team-100000563.html) ticket price data came from a Yahoo Finance article, and the [NHL's](https://www.vividseats.com/blog/nhl-team-rankings-by-median-ticket-price) ticket price data came from a VividSeats blog post.
 ## Baseball Attendance
 ## Hockey Attendance
 ## Football Attendance
 ## Basketball Attendance
 ## Ticket Prices
 ## Data Visualization
-Once we extracted the data from our chosen sources, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API
+Once we extracted the data from our chosen sources and stored the data in a SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API
+
+
 ETL - take scraped data
 Flask - make API to store data we grabbed
 leaflet.js - requests data from flask and visualizes
