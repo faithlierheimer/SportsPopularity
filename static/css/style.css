@@ -40,8 +40,7 @@ ul {
 #panel, #flip {
   padding: 5px;
   text-align: center;
-  background-color: blue;
-  border: solid 1px #c3c3c3;
+  background-color: #17a2b8!important;
 }
 
 #panel {
