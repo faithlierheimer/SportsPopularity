@@ -11,7 +11,7 @@ Major league sports are an integral part of many American lives. However, not al
 # **Data Sources**
 
 Sports season-wide attendance data is relatively easily to find across the internet. To access this data, we will be using a series of web-scraping techniques, including but not limted to python's Pandas library and Beautiful Soup. 
-For our baseball attendance data, we will be scraping the Wikipedia article [2019 Major League Baseball Season](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) to access data on the Major League Baseball Teams' [attendance figures](mlb_attendance.png) for the 2019 season, as well as a [JSON of Ballparks' Locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
+For our baseball attendance data, we will be scraping the Wikipedia article [2019 Major League Baseball Season](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) to access data on the Major League Baseball Teams' [attendance figures](mlb_attendance.PNG) for the 2019 season, as well as a [JSON of Ballparks' Locations](https://tinyurl.com/y3sby4ur) to accurately place the ballparks on our leaflet map. 
 For the hockey attendance data we will be referencing 
 For the football attendance we
 For the basketball attendance data we 
