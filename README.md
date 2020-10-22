@@ -1,5 +1,5 @@
 # Sports Popularity
-
+![map](images/map.PNG)
 # **Project Contributors** 
 
 This is a collaborative project, shared between [Jennie Brozena](https://github.com/JenBroz), [Nathaniel Diamond](https://github.com/DiamondN97), [Faith Lierheimer](https://github.com/faithlierheimer), [Thambi Mathews](https://github.com/), and [Gabe Stuhr](https://github.com/gstuhr). 
@@ -19,6 +19,7 @@ For the ticket price data we utilzed the data from several sources and aggregate
 ## Baseball Attendance
 Utilizing  ![attendance figures](images/mlb_attendance.PNG)
 ## Hockey Attendance
+![attendance figures](images/nhl_data.PNG)
 ## Football Attendance
 ![attendance figures](images/nfl_attendance_raw.PNG)
 ## Basketball Attendance
@@ -26,8 +27,8 @@ Utilizing  ![attendance figures](images/mlb_attendance.PNG)
 ## Ticket Prices
 ![ticket prices](images/ticket_prices.PNG)
 ## Data Visualization
-![map](images/map.PNG)
-Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. Once the flask app was fuctinoal, we [deployed our data and visualization](https://gfstuhr.github.io/SportsPopularityMerged/index.html) onto a static web-hosting service using a combination of Heroku and Github pages. We created selectable layers for each of the sports to display a heatmap of attendance. The radius and the color of the markers represent the relative seasonal attendance figures for each of the sports - the larger the radius, the higher the seasonal attendance for the team is. Clicking on the markerof the markers
+
+Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. Once the flask app was fuctinoal, we [deployed our data and visualization](https://gfstuhr.github.io/SportsPopularityMerged/index.html) onto a static web-hosting service using a combination of Heroku and Github pages. We created selectable layers for each of the sports to display a heatmap of attendance. The radius and the color of the markers represent the relative seasonal attendance figures for each of the sports - the larger the radius, the higher the seasonal attendance for the team is. The color of each marker also represents the attendence data: for NBA and NFL teams, the color ranges from a light pink at the lower attended teams, to a dark red for higher attendance; for MLB teams, Clicking on each of the markers provides more data such as the team name and attendance figure associated with the marker.
 
 
 ETL - take scraped data
