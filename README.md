@@ -30,7 +30,7 @@ Using the [ESPN data](http://www.espn.com/nhl/attendance/_/year/2019) for the 20
 Using the Pro-Football-Reference's [data](https://www.pro-football-reference.com/years/2018/attendance.htm) on the 2018-2019 football season, and a [list](https://www.stadiumsofprofootball.com/comparisons/) of every professional football stadium we were able to collect the attendance data for NFL teams and place the stadiums on a leaflet map for further analysis. In analyzing this dataset there were some interesting trends of note: for the most part, seasonal attendance figures across the nation were relatively equal, from the highest attended team, the [Dallas Cowboys](https://www.dallascowboys.com/) to the lowest attended team, the [Cincinnati Bengals](https://www.bengals.com/) there is only a difference of roughly 380,000 seasonal attendance. (1.3M vs. 911,000). Barring the Denver Broncos and the Arizona Cardinals, there is also a lack of NFL teams in the mountain-west region of the United States.
 
 ## Basketball Attendance
-![attendance figure](nba_data.PNG)
+![attendance figure](images/nba_data.PNG)
 
 Using [ESNP's data](http://www.espn.com/nba/attendance/_/year/2019) for the 2018-2019 season, as well as the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas) of the professional basketball arenas we were able to collect the attendance data for NFL teams and place the stadiums on a leaflet map for further analysis.
 ## Ticket Prices
