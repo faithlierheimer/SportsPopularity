@@ -17,16 +17,17 @@ For the football attendance data we scraped Pro-Football-Reference's [data](http
 For the basketball attendance data we accessed [ESNP's data](http://www.espn.com/nba/attendance/_/year/2019) for the 2018-2019 season, as well as the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas) of the professional basketball arenas.
 For the ticket price data we utilzed the data from several sources and aggregated them into a single csv. The [MLB](https://www.tickpick.com/blog/how-much-are-mlb-tickets/) and [NFL](https://www.tickpick.com/blog/how-much-are-nfl-tickets/) ticket price data came from TickPick Blog. The [NBA's](https://finance.yahoo.com/news/average-ticket-prices-nba-team-100000563.html) ticket price data came from a Yahoo Finance article, and the [NHL's](https://www.vividseats.com/blog/nhl-team-rankings-by-median-ticket-price) ticket price data came from a VividSeats blog post.
 ## Baseball Attendance
-![attendance figures](mlb_attendance.PNG)
+Utilizing  ![attendance figures](images/mlb_attendance.PNG)
 ## Hockey Attendance
 ## Football Attendance
-![attendance figures](nfl_attendance_raw.PNG)
+![attendance figures](images/nfl_attendance_raw.PNG)
 ## Basketball Attendance
 
 ## Ticket Prices
-![ticket prices](ticket_prices.PNG)
+![ticket prices](images/ticket_prices.PNG)
 ## Data Visualization
-Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. We created selectable layers for each of the sports to display a heatmap of attendance. The radius of the markers
+![map](images/map.PNG)
+Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. Once the flask app was fuctinoal, we [deployed our data and visualization](https://gfstuhr.github.io/SportsPopularityMerged/index.html) onto a static web-hosting service using a combination of Heroku and Github pages. We created selectable layers for each of the sports to display a heatmap of attendance. The radius and the color of the markers represent the relative seasonal attendance figures for each of the sports - the larger the radius, the higher the seasonal attendance for the team is. Clicking on the markerof the markers
 
 
 ETL - take scraped data
