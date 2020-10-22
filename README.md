@@ -1,8 +1,6 @@
 # Sports Popularity
 ![map](images/map.PNG)
-# **Project Contributors** 
 
-This is a collaborative project, shared between [Jennie Brozena](https://github.com/JenBroz), [Nathaniel Diamond](https://github.com/DiamondN97), [Faith Lierheimer](https://github.com/faithlierheimer), [Thambi Mathews](https://github.com/), and [Gabe Stuhr](https://github.com/gstuhr). 
 
 # **Summary of Interests and Intent**
 
@@ -18,18 +16,26 @@ For the basketball attendance data we accessed [ESNP's data](http://www.espn.com
 For the ticket price data we utilzed the data from several sources and aggregated them into a single csv. The [MLB](https://www.tickpick.com/blog/how-much-are-mlb-tickets/) and [NFL](https://www.tickpick.com/blog/how-much-are-nfl-tickets/) ticket price data came from TickPick Blog. The [NBA's](https://finance.yahoo.com/news/average-ticket-prices-nba-team-100000563.html) ticket price data came from a Yahoo Finance article, and the [NHL's](https://www.vividseats.com/blog/nhl-team-rankings-by-median-ticket-price) ticket price data came from a VividSeats blog post.
 ## Baseball Attendance
 ![attendance figures](images/mlb_attendance.PNG)
+
+Using the [Wikipedia article](https://en.wikipedia.org/wiki/2019_Major_League_Baseball_season) and the [JSON of ballparks' locations](https://tinyurl.com/y3sby4ur) we were able to collect the attendance data for MLB teams and place the ballpark locations on a map later on. In analzying the data, there are some interesting trends to note. In a way, the MLB attenddance data acts almost as a low-granularity population heatmap of the nation; the highest attended teams are centralized in the mid-atlantic through southern new england; southern California, and in the eastern mid-west. With the exception of the Rockies in Denver, Colorado and the Cardinals in Phoenix, Arizona, there is lack of MLB teams in the mountain-west region of the United States; especially when compared to the density of teams in other regions of the nation
 ## Hockey Attendance
 ![attendance ](images/nhl_data.png)
+
+
 ## Football Attendance
 ![attendance numbers](images/nfl_attendance_raw.png)
 ## Basketball Attendance
 
 ## Ticket Prices
 ![ticket prices](images/ticket_prices.png)
+
 ## Data Visualization
 
-Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. Once the flask app was fuctinoal, we [deployed our data and visualization](https://gfstuhr.github.io/SportsPopularityMerged/index.html) onto a static web-hosting service using a combination of Heroku and Github pages. We created selectable layers for each of the sports to display a heatmap of attendance. The radius and the color of the markers represent the relative seasonal attendance figures for each of the sports - the larger the radius, the higher the seasonal attendance for the team is. The color of each marker also represents the attendence data: for NBA and NFL teams, the color ranges from a light pink at the lower attended teams, to a dark red for higher attendance; for MLB teams, Clicking on each of the markers provides more data such as the team name and attendance figure associated with the marker.
+Once we extracted the data from our chosen sources and stored the data in an SQL database, we loaded it onto a flask app to create a restful API so the data can be easily recalled for further analysis. Using the javascript library leaflet, we requested the data from our flask API to overlay our data on a map of the United States. Once the flask app was fuctinoal, we [deployed our data and visualization](https://gfstuhr.github.io/SportsPopularityMerged/index.html) onto a static web-hosting service using a combination of Heroku and Github pages. We created selectable layers for each of the sports to display a heatmap of attendance. The radius and the color of the markers represent the relative seasonal attendance figures for each of the sports - the larger the radius, the higher the seasonal attendance for the team is. The color of each marker also represents the attendence data: for NBA and NFL teams, the color ranges from a light pink at the lower attended teams, to a dark red for higher attendance; for MLB teams, Clicking on each of the markers provides more data such as the team name and attendance figure associated with the marker. The user is able to select the specific sports' attendance figures they want to visualize, as well as switching betwen a "light" and "dark" view of the map depending on user preference.
 
+# **Project Contributors** 
+
+This is a collaborative project, shared between [Jennie Brozena](https://github.com/JenBroz), [Nathaniel Diamond](https://github.com/DiamondN97), [Faith Lierheimer](https://github.com/faithlierheimer), [Thambi Mathews](https://github.com/), and [Gabe Stuhr](https://github.com/gstuhr). 
 
 ETL - take scraped data
 Flask - make API to store data we grabbed
