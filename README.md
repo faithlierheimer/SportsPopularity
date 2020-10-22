@@ -32,7 +32,7 @@ Using the Pro-Football-Reference's [data](https://www.pro-football-reference.com
 ## Basketball Attendance
 ![attendance figure](images/nba_data.PNG)
 
-Using [ESNP's data](http://www.espn.com/nba/attendance/_/year/2019) for the 2018-2019 season, as well as the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas) of the professional basketball arenas we were able to collect the attendance data for NFL teams and place the stadiums on a leaflet map for further analysis.
+Using [ESNP's data](http://www.espn.com/nba/attendance/_/year/2019) for the 2018-2019 season, as well as the [Wikipedia list](https://en.wikipedia.org/wiki/List_of_National_Basketball_Association_arenas) of the professional basketball arenas we were able to collect the attendance data for NFL teams and place the stadiums on a leaflet map for further analysis. In analyzing this dataset, there are some interesting trends to note. Similar to football, most of the NBA teams' attendance figures are relatively similar. From the most attended team, the [Philadelphia 76ers](https://www.nba.com/sixers/) to the [Brooklyn Nets](), there is only a difference of roughly 216,000 seasonal attendance. (838,000 to 612,000). Unlike baseball and football, there is another basketball team outside of Denver; the Utah Jazz in Salt Lake City. This team is in the upper 50% of attended teams so there is an argument for more professional sports' representation in the mountain-west region of the United States.
 ## Ticket Prices
 ![ticket prices](images/ticket_prices.png)
 
