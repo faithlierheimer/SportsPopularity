@@ -114,7 +114,34 @@ d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sports
         );
     };
 
-    //for loop for nhl data: 
+//for loop for nhl data: 
+    for(var i = 0; i<sportsdata.nhl.length; i++){
+        var nhl_color = "";
+        if (sportsdata.nba[i].Total_attendance > 800000 && sportsdata.nhl[i].Total_attendance < 900000) {
+            nhl_color = "#fee5d9";
+        }
+        else if (sportsdata.nba[i].Total_attendance > 900000 && sportsdata.nhl[i].Total_attendance < 1000000) {
+            nhl_color = "#fcae91";
+        }
+        else if (sportsdata.nba[i].Total_attendance > 1000000 && sportsdata.nhl[i].Total_attendance < 1100000) {
+            nhl_color = "#fb6a4a";
+        }
+        else if (sportsdata.nhl[i].Total_attendance > 1100000) {
+            nhl_color = "#cb181d";
+        }
+        else {
+            nhl_color = "red";
+        }
+        nhl_data.push(
+            L.circle([sportsdata.nhl[i].Lat, sportsdata.nhl[i].Lng], {
+                fillOpacity: 0.75,
+                color: "white",
+                fillColor: nhl_color,
+                radius: sportsdata.nhl[i].Total_attendance*0.06
+            })
+            .bindPopup(`<h3> ${sportsdata.nhl[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.hl[i].attendance} </h4>`)
+        );
+    };
 
         
 
